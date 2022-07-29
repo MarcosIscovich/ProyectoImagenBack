@@ -1,0 +1,21 @@
+module.exports = function(sequelize, DataTypes) {
+    return sequelize.define('cliente', {
+        id: {
+            type: DataTypes.INTEGER,
+            primaryKey: true,
+            autoIncrement: true
+        },
+        username: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        password: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+        },
+               
+    }, {
+        timestamps: true,
+        tableName: 'user'
+    });
+}
