@@ -6,13 +6,27 @@ const sequelize = new Sequelize('imagenbd', 'root', 'admin', {
 });
 
 const ClienteModel = require('./models/ClienteModel')(sequelize, Sequelize);
-const ClienteXProdModel = require('./models/ProductoModel')(sequelize, Sequelize);
+const ProductoModel = require('./models/ProductoModel')(sequelize, Sequelize);
 const TurnoModel = require('./models/TurnoModel')(sequelize, Sequelize);
 const ProdColocadoModel = require('./models/ProdColocadoModel')(sequelize, Sequelize);
 const TrabajoModel = require('./models/TrabajoModel')(sequelize, Sequelize);
 const UserModel = require('./models/UserModel')(sequelize, Sequelize);
 
-sequelize.sync({ force:false}).then(() => {
+ClienteModel.hasMany(TurnoModel);
+TurnoModel.belongsTo(ClienteModel);
+
+TrabajoModel.hasMany(TurnoModel);
+TurnoModel.belongsTo(TrabajoModel);
+
+TurnoModel.hasMany(ProdColocadoModel);
+ProdColocadoModel.belongsTo(TurnoModel);
+
+ProductoModel.hasMany(ProdColocadoModel);
+ProdColocadoModel.belongsTo(ProductoModel);
+
+
+
+sequelize.sync({ alter: false }).then(() => {
     console.log('Tabla creada');
 }
 ).catch(error => {
@@ -21,7 +35,7 @@ sequelize.sync({ force:false}).then(() => {
 
 module.exports = {
     ClienteModel,
-    ClienteXProdModel,
+    ProductoModel,
     TurnoModel,
     ProdColocadoModel,
     TrabajoModel,
