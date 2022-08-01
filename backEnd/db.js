@@ -6,13 +6,13 @@ const sequelize = new Sequelize('imagenbd', 'root', 'admin', {
 });
 
 const ClienteModel = require('./models/ClienteModel')(sequelize, Sequelize);
-const ClienteXProdModel = require('./models/ClienteXProdModel')(sequelize, Sequelize);
-const ClienteXTrabModel = require('./models/ClienteXTrabModel')(sequelize, Sequelize);
+const ClienteXProdModel = require('./models/ProductoModel')(sequelize, Sequelize);
+const TurnoModel = require('./models/TurnoModel')(sequelize, Sequelize);
 const ProdColocadoModel = require('./models/ProdColocadoModel')(sequelize, Sequelize);
 const TrabajoModel = require('./models/TrabajoModel')(sequelize, Sequelize);
 const UserModel = require('./models/UserModel')(sequelize, Sequelize);
 
-sequelize.sync({ force:true}).then(() => {
+sequelize.sync({ force:false}).then(() => {
     console.log('Tabla creada');
 }
 ).catch(error => {
@@ -22,7 +22,7 @@ sequelize.sync({ force:true}).then(() => {
 module.exports = {
     ClienteModel,
     ClienteXProdModel,
-    ClienteXTrabModel,
+    TurnoModel,
     ProdColocadoModel,
     TrabajoModel,
     UserModel,

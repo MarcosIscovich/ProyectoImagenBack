@@ -1,19 +1,11 @@
 module.exports = function(sequelize, Datatypes){
     return sequelize.define('prod_colocado', {
-        id: {
+
+        orden: {
             type: Datatypes.INTEGER,
-            primaryKey: true,
-            autoIncrement: true
-        },
-        tintura: {
-            type: Datatypes.STRING,
             allowNull: false,
         },
-        tipo_nutricion: {
-            type: Datatypes.STRING,
-            allowNull: false,
-        },
-        agua_oxigenada: {
+        cantidadProducto: {
             type: Datatypes.STRING,
             allowNull: false,
         },
