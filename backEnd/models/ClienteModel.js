@@ -1,11 +1,9 @@
+//const { DataTypes } = require('sequelize')
+
 module.exports = function(sequelize, DataTypes) {
     return sequelize.define('cliente', {
         nombre: {
             type: DataTypes.STRING,
-            allowNull: false,
-        },
-        telefono: {
-            type: DataTypes.INTEGER,
             allowNull: false,
         },
         direccion: {

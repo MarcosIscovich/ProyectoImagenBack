@@ -1,17 +1,25 @@
 const express = require('express');
+
 const app = express();
 const bodyParser = require('body-parser');
+
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-require('./db');
+const db = require('./database/models');
 
-app.get('/', (req, res) => {
-    res.send('Hola Mundo!');
+
+//routes
+require('./routes/index.routes')(app);
+
+db.sequelize.sync({ alter: false }).then(() => {
+    console.log('Tablas creadas correctamente');
+}
+).catch(error => {
+    console.log(error);
 });
 
-
-app.listen(3000, () => {
+app.listen(3001, () => {
     console.log('Servidor Funcionando');
 });
