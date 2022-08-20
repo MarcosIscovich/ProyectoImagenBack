@@ -4,7 +4,9 @@ exports.getUsers = (req, res) => {
 
     console.log("FUNCIONA GET USERS");
 
-    db.UserModel.findAll({}
+    db.UserModel.findAll({
+        atributes: ['username']
+    }
     ).then(users => {
 
         res.status(200).send(users);

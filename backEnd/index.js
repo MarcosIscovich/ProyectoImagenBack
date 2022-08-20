@@ -1,4 +1,5 @@
 const express = require('express');
+
 const app = express();
 const bodyParser = require('body-parser');
 
@@ -19,6 +20,6 @@ db.sequelize.sync({ alter: false }).then(() => {
     console.log(error);
 });
 
-app.listen(3000, () => {
+app.listen(3001, () => {
     console.log('Servidor Funcionando');
 });
