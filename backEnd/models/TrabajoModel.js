@@ -14,7 +14,7 @@ module.exports = function (sequelize, DataTypes) {
         },
         cantTrabajadores: {
             type: DataTypes.INTEGER,
-            allowNull: false,
+            allowNull: true,
         },
     }, {
         timestamps: true,
