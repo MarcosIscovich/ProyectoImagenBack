@@ -1,3 +1,5 @@
+const verifyToken = require('../middlewares/verifyToken');
+
 module.exports = (app) => {
 
 
@@ -15,7 +17,7 @@ app.use("/prodColocado", ProdColRoutes);
 app.use("/producto", ProductoRoutes);
 app.use("/trabajo", TrabajoRoutes);
 app.use("/turno", TurnoRoutes);
-app.use("/user", UserRoutes);
+app.use("/user",  UserRoutes);
 app.use("/login", AuthRoutes);
 
 }

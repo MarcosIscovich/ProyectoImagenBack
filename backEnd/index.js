@@ -20,6 +20,6 @@ db.sequelize.sync({ alter: false }).then(() => {
     console.log(error);
 });
 
-app.listen(3001, () => {
+app.listen(3000, () => {
     console.log('Servidor Funcionando');
 });
