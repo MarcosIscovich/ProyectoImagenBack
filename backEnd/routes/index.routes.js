@@ -22,4 +22,6 @@ app.use("/user",  UserRoutes);
 app.use("/login", AuthRoutes);
 app.use("/ficha", FichaRoutes);
 
+console.log("cambio desde kraken")
+
 }
