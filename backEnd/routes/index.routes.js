@@ -10,6 +10,7 @@ const TrabajoRoutes = require('./trabajo.routes');
 const TurnoRoutes = require('./turno.routes');
 const UserRoutes = require('./user.routes');
 const AuthRoutes = require('./auth.routes');
+const FichaRoutes = require('./ficha.routes');
 
 
 app.use("/cliente", ClienteRoutes);
@@ -19,5 +20,6 @@ app.use("/trabajo", TrabajoRoutes);
 app.use("/turno", TurnoRoutes);
 app.use("/user",  UserRoutes);
 app.use("/login", AuthRoutes);
+app.use("/ficha", FichaRoutes);
 
 }

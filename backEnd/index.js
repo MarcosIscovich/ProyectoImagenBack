@@ -19,7 +19,6 @@ db.sequelize.sync({ alter: false }).then(() => {
 ).catch(error => {
     console.log(error);
 });
-
 app.listen(3000, () => {
     console.log('Servidor Funcionando');
 });

@@ -1,16 +1,16 @@
 //const { DataTypes } = require('sequelize')
 
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
     return sequelize.define('cliente', {
         nombre: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        password:{
+        password: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        telefono:{
+        telefono: {
             type: DataTypes.STRING,
             allowNull: false,
         },
@@ -30,18 +30,6 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        ocupacion: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        tipo_cabello:{
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        estado_cabello: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },       
     }, {
         timestamps: true,
         tableName: 'cliente'
